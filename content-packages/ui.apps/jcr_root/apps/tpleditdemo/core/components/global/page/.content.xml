@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0" xmlns:wcmio="http://wcm.io/ns"
+    jcr:primaryType="cq:Component"
+    sling:resourceSuperType="core/wcm/components/page/v2/page">
+
+  <wcmio:parsysConfig
+      jcr:primaryType="nt:unstructured">
+    <paths
+        jcr:primaryType="nt:unstructured">
+
+      <servicesLinkList-wcmio
+          jcr:primaryType="nt:unstructured"
+          pattern="^jcr:content/.*$"
+          allowedParents="[tpleditdemo/core/components/content/servicesLinkList_wcmio]"
+          allowedChildren="[tpleditdemo/core/components/content/servicesLinkListItem]"/>
+
+    </paths>
+  </wcmio:parsysConfig>
+
+</jcr:root>

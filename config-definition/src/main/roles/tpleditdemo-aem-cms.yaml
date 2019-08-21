@@ -1,0 +1,65 @@
+# Project-specific AEM configuration
+
+# Inherit default AEM functionality from "AEM Definitions", see http://devops.wcm.io/conga/definitions/aem/
+inherits:
+- role: aem-cms
+
+variants:
+- variant: aem-author
+- variant: aem-publish
+
+templateDir: tpleditdemo-aem-cms
+
+files:
+
+
+# AEM Core WCM components
+- url: mvn:com.adobe.cq/core.wcm.components.all//zip
+  dir: packages
+
+# AEM OSGi System Configuration
+- file: tpleditdemo-aem-cms-config.provisioning
+  dir: packages
+  template: tpleditdemo-aem-cms-config.provisioning.hbs
+  postProcessors:
+  - aem-contentpackage-osgiconfig
+  postProcessorOptions:
+    contentPackage:
+      name: tpleditdemo-aem-cms-config
+      rootPath: /apps/tpleditdemo/config
+      filters:
+      - filter: /apps/tpleditdemo
+        rules:
+        - rule: include
+          pattern: /apps/tpleditdemo/config(\..*)?
+        - rule: exclude
+          pattern: /apps/tpleditdemo/config/rewriter
+
+# Application package
+- url: mvn:to.adapt.demo/to.adapt.demo.tpledit.complete//zip
+  dir: packages
+
+# Application conf content package
+- url: mvn:to.adapt.demo/to.adapt.demo.tpledit.conf-content//zip
+  dir: packages
+  condition: ${app.confContent}
+
+# Application sample content package
+- url: mvn:to.adapt.demo/to.adapt.demo.tpledit.sample-content//zip
+  dir: packages
+  condition: ${app.sampleContent}
+
+
+# Defines configuration parameters and default values
+config:
+  contentPackage:
+    group: adaptto-demo
+    version: ${version}
+
+  app:
+    confContent: true
+    sampleContent: false
+
+  # Log levels
+  log:
+    projectSpecificLogLevel: warn

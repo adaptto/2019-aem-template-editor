@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jcr:root xmlns:sling="http://sling.apache.org/jcr/sling/1.0" xmlns:cq="http://www.day.com/jcr/cq/1.0" xmlns:jcr="http://www.jcp.org/jcr/1.0"
+    jcr:primaryType="cq:Component"
+    jcr:title="Portfolio Item"
+    componentGroup="tpleditdemo"
+    sling:resourceSuperType="core/wcm/components/teaser/v1/teaser"
+    imageDelegate="core/wcm/components/image/v2/image">
+    <cq:htmlTag
+        jcr:primaryType="nt:unstructured"
+        class="col-md-4 col-sm-6 portfolio-item"/>
+</jcr:root>

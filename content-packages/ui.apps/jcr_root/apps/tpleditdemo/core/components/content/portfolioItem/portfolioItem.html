@@ -1,0 +1,21 @@
+<sly data-sly-use.teaser="com.adobe.cq.wcm.core.components.models.Teaser"     
+     data-sly-test.hasContent="${teaser.imageResource && teaser.title}"
+     class="${!wcmmode.disabled && teaser.imageResource ? 'cq-dd-image' : ''}">
+
+  <a class="portfolio-link" href="${teaser.linkURL}">
+    <div class="portfolio-hover">
+      <div class="portfolio-hover-content">
+        <i class="fas fa-plus fa-3x"></i>
+      </div>
+    </div>
+    <sly data-sly-test="${teaser.imageResource}" data-sly-resource="${teaser.imageResource}"/>
+  </a>
+  <div class="portfolio-caption">
+    <h4>${teaser.title}</h4>
+    <p class="text-muted" data-sly-test="teaser.description">${teaser.description}</p>
+  </div>
+
+</sly>
+
+<sly data-sly-use.templates="core/wcm/components/commons/v1/templates.html"
+    data-sly-call="${templates.placeholder @ isEmpty=!hasContent}"></sly>
