@@ -37,7 +37,7 @@
                             jcr:primaryType="nt:unstructured"
                             jcr:title="Default"
                             sling:resourceType="wcm/core/components/policy/policy"
-                            components="[/apps/tpleditdemo/core/components/content/servicesItem,/apps/tpleditdemo/core/components/content/servicesLinkList,/apps/tpleditdemo/core/components/content/servicesLinkList_wcmio]">
+                            components="[/apps/tpleditdemo/core/components/content/servicesItem,/apps/tpleditdemo/core/components/content/servicesLinkList]">
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                             <cq:styleGroups jcr:primaryType="nt:unstructured">
                                 <item0
@@ -59,15 +59,6 @@
                             </cq:styleGroups>
                         </default>
                     </services>
-                    <servicesLinkList jcr:primaryType="nt:unstructured">
-                        <default
-                            jcr:primaryType="nt:unstructured"
-                            jcr:title="Default"
-                            sling:resourceType="wcm/core/components/policy/policy"
-                            components="/apps/tpleditdemo/core/components/content/servicesLinkListItem">
-                            <jcr:content jcr:primaryType="nt:unstructured"/>
-                        </default>
-                    </servicesLinkList>
                     <portfolio jcr:primaryType="nt:unstructured">
                         <default
                             jcr:primaryType="nt:unstructured"
@@ -107,6 +98,7 @@
                             <jcr:content jcr:primaryType="nt:unstructured"/>
                         </default>
                     </portfolioItem>
+                    <header jcr:primaryType="nt:unstructured"/>
                 </content>
             </components>
         </core>
